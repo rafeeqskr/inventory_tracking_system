@@ -32,9 +32,9 @@ rails server
     + **Server Start:** When you start the Rails server, all the initial configurations, including routes, controllers, models, views, and Stimulus controllers, are loaded.
     + **Client Side:** The client-side JavaScript initializes, setting up Stimulus controllers and enabling Turbo Streams.
 2. **User Interacts with the Form**
-  **Adding a New Inventory Item**
+    **Adding a New Inventory Item**
     + To add new Inventory Items using a seed file
-  **Updating an Existing Inventory Item**
+    **Updating an Existing Inventory Item**
     + **User Action:** The user updates the quantity of an existing inventory item using the form within the inventory item partial.
     + **Form Submission:** The user submits the form by clicking the "Update" button.
 3. **Stimulus Controller Handles Form Submission**
@@ -45,7 +45,7 @@ rails server
     + **Success Check:** The reset method in the Stimulus controller checks if the form submission was successful using event.detail.success.
     + **Form Reset:** If the submission was successful, the form is reset using this.element.reset(). This clears the form fields for a new entry.
 5. **Rails Controller Handles the Request**
-  **Update Action**
+    **Update Action**
     + **Request Handling:** The update action in InventoryItemsController receives the form data.
     + **Model Update: ** The InventoryItem record is updated with the new quantity.
     + **Broadcast:** After the record is successfully updated, it broadcasts a Turbo Stream to replace the updated item in the inventory list.

@@ -10,4 +10,11 @@
       <%= f.submit "Update", class: "bg-blue-500 text-white rounded px-4 py-2" %>
     </div>
   <% end %>
+
+  <% if defined?(error_message) && error_message.present? %>
+    <div class="mt-4 p-4 bg-red-100 border border-red-400 text-red-700 rounded">
+      <%= error_message %>
+    </div>
+  <% end %>
 </div>
+

@@ -7,7 +7,10 @@ class InventoryItemsController < ApplicationController
         format.html { redirect_to root_path, notice: "Inventory item updated successfully." }
       end
     else
-      render :edit
+      respond_to do |format|
+        format.turbo_stream { render turbo_stream: turbo_stream.replace(@inventory_item, partial: 'inventory_item', locals: { error_message: @inventory_item.errors.full_messages.join(), inventory_item: @inventory_item.reload }) }
+        format.html { render :edit }
+      end
     end
   end
 
